@@ -1,0 +1,21 @@
+{
+    "name": "qsnh/think-file-validate",
+    "description": "为Thinkphp5框架增加文件的有效性验证规则",
+    "keywords": ["validate", "thinkphp5"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "XiaoTeng",
+            "email": "616896861@qq.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/autoload.php"
+        ]
+    },
+    "require": {
+        "dflydev/apache-mime-types": "v1.0.1"
+    }
+}
