@@ -16,6 +16,11 @@
         ]
     },
     "require": {
+        "php": "^7.0",
         "dflydev/apache-mime-types": "v1.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.5.7",
+        "topthink/think-validate": "^1.0"
     }
 }

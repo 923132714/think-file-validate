@@ -4,14 +4,14 @@ use think\Validate;
 use Dflydev\ApacheMimeTypes\PhpRepository;
 
 Validate::extend('safeFile', function ($file, $rules) {
-    if (! ($file instanceof \SplFileObject)) {
+    if (! ($file instanceof \SplFileInfo)) {
         return false;
     }
 
     // 获取上传文件的基本信息
-    $extension = strtolower(pathinfo($file->getInfo()['name'], PATHINFO_EXTENSION));
+    $extension = strtolower(pathinfo($file->getfilename(), PATHINFO_EXTENSION));
     $mime = (new class {
-        public function getMime(\SplFileObject $file)
+        public function getMime($file)
         {   
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
             return finfo_file($finfo, $file->getRealPath() ?: $file->getPathname());
