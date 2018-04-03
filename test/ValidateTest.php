@@ -8,7 +8,7 @@ class ValidateTest extends TestCase
 
     public function testUploadTextFile()
     {
-        $data = ['file' => new \SplFileInfo(dirname(__FILE__) . '/demo.txt')];
+        $data = ['file' => new \File(dirname(__FILE__) . '/demo.txt')];
 
         $validate = Validate::make([
             'file' => 'safeFile:txt',
@@ -25,7 +25,7 @@ class ValidateTest extends TestCase
 
     public function testAllowJpgFIle()
     {
-        $data = ['file' => new \SplFileObject(dirname(__FILE__) . '/jpg.jpg')];
+        $data = ['file' => new \File(dirname(__FILE__) . '/jpg.jpg')];
         $validate = Validate::make([
             'file' => 'safeFile:jpg',
         ]);
@@ -43,7 +43,7 @@ class ValidateTest extends TestCase
 
     public function testAllowGifFIle()
     {
-        $data = ['file' => new \SplFileObject(dirname(__FILE__) . '/gif.gif')];
+        $data = ['file' => new \File(dirname(__FILE__) . '/gif.gif')];
         $validate = Validate::make([
             'file' => 'safeFile:gif',
         ]);
@@ -61,7 +61,7 @@ class ValidateTest extends TestCase
 
     public function testAllowPngFile()
     {
-        $data = ['file' => new \SplFileObject(dirname(__FILE__) . '/png.png')];
+        $data = ['file' => new \File(dirname(__FILE__) . '/png.png')];
         $validate = Validate::make([
             'file' => 'safeFile:png',
         ]);
@@ -79,7 +79,7 @@ class ValidateTest extends TestCase
 
     public function testMultiFileType()
     {
-        $data = ['file' => new \SplFileObject(dirname(__FILE__) . '/demo.txt')];
+        $data = ['file' => new \File(dirname(__FILE__) . '/demo.txt')];
 
         $validate = Validate::make([
             'file' => 'safeFile:txt,jpg,png,gif',

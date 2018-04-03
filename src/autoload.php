@@ -9,7 +9,7 @@ Validate::extend('safeFile', function ($file, $rules) {
     }
 
     // 获取上传文件的基本信息
-    $extension = strtolower(pathinfo($file->getfilename(), PATHINFO_EXTENSION));
+    $extension = strtolower(pathinfo($file->getInfo('name'), PATHINFO_EXTENSION));
     $mime = (new class {
         public function getMime($file)
         {   
